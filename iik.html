@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Home - Landing Page</title>
@@ -14,123 +14,14 @@
     <!-- Font Text -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca" rel="stylesheet">
     <style>
-        footer {
-            background-color: rgb(35, 35, 64);
-            background-size: cover;
-            background-position: bottom;
-            color: white;
-            /* Set height to 200px or adjust as needed */
-            height: 480px;
-            /* Add padding to push content upwards */
-            padding-top: 40px;
-            /* Flexbox to align content vertically */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        footer .row {
-            align-items: flex-start;
-            /* Change this to flex-start */
-            margin-left: 5%;
-        }
-
-        /* Optional styles to adjust spacing and alignment */
-        footer h5 {
-            margin-bottom: 5%;
-        }
-
-        footer p {
-            margin-bottom: 4%;
-        }
-
-        /* Change text color to RGB (84, 104, 231) */
-        footer h5.text-color-custom {
-            color: rgb(84, 104, 231);
-        }
-
-        footer .custom-container {
-            /* Set the desired width and height */
-            width: 90%;
-            height: 10%;
-            /* Optional: Adjust padding or margin as needed */
-            padding: -5%;
-            margin: 0 auto;
-            /* To center the container horizontally */
-        }
-
-        /* Style the input field container */
-        footer .input-container {
-            position: relative;
-        }
-
-        footer .arrow-icon {
-            /* Styling for arrow icon */
-            position: absolute;
-            top: 50%;
-            right: -40%;
-            transform: translateY(-50%);
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-        }
-
-        /* Style the input field */
-        footer input[type="text"] {
-            padding: 5px 50px 5px 10px;
-            /* Add padding on the right for arrow space */
-            width: 140%;
-            /* Ensure input field is above the arrow icon */
-            border: 2px solid rgb(86, 86, 108);
-            /* Set border color to RGB (84, 104, 231) */
-            border-radius: 5px;
-            /* Add border-radius for rounded corners */
-            background-color: rgb(86, 86, 108);
-            /* Change the background color */
-            color: white;
-            /* Change the text color */
-        }
-
-        /* Style the placeholder text */
-        footer input[type="text"]::placeholder {
-            color: white;
-            /* Change the placeholder text color */
-        }
-
-        /* Remove the outline on focus but maintain accessibility */
-        footer input[type="text"]:focus {
-            border-color: rgb(84, 104, 231);
-            box-shadow: 0 0 0 3px rgba(84, 104, 231, 0.2);
-        }
-
-        .card {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Add shadow effect */
-            transition: box-shadow 0.3s ease-in-out;
-            /* Add smooth transition */
-            border-radius: 1%;
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            /* Increase shadow on hover */
-        }
-
-        footer .logo {
-            width: 159.927px;
-        }
-
-        footer .py-2 {
-            width: 100%;
-        }
-
-
-        /* Media query for mobile portrait */
-        @media only screen and (max-width: 569px) {
-            html, body {
+        @media only screen and (max-width: 1441px) {
+            html,
+            body {
                 width: 100%;
-                margin-right: none;
-                right: ;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
             }
 
             footer {
@@ -139,7 +30,7 @@
                 background-position: bottom;
                 color: white;
                 /* Set height to 200px or adjust as needed */
-                height: 100%;
+                height: 480px;
                 /* Add padding to push content upwards */
                 padding-top: 40px;
                 /* Flexbox to align content vertically */
@@ -148,19 +39,50 @@
                 justify-content: space-between;
             }
 
+            footer .gambarlogo {
+                padding-bottom: 12%;
+                width: 151px;
+            }
+
+            footer .company {
+                margin-left: 10%;
+            }
+
+            footer .us {
+                width: 80%;
+            }
+
+            footer .copyright {
+                margin-bottom: 15%;
+                margin-left: -51%;
+            }
+
+            footer .pstay {
+                margin-bottom: 4%;
+            }
+
+            footer .copyright {
+                color: white;
+                width: 100%;
+                margin-left: -6.5%;
+                margin-top: 30%;
+                margin-bottom: 5%;
+            }
+
             footer .row {
                 align-items: flex-start;
                 /* Change this to flex-start */
                 margin-left: 5%;
+                margin-top: 4%;
             }
 
             /* Optional styles to adjust spacing and alignment */
             footer h5 {
-                margin-bottom: 5%;
+                margin-bottom: 10%;
             }
 
             footer p {
-                margin-bottom: 4%;
+                margin-bottom: 10%;
             }
 
             /* Change text color to RGB (84, 104, 231) */
@@ -187,7 +109,7 @@
                 /* Styling for arrow icon */
                 position: absolute;
                 top: 50%;
-                right: -1%;
+                right: -50%;
                 transform: translateY(-50%);
                 width: 30px;
                 height: 30px;
@@ -198,7 +120,7 @@
             footer input[type="text"] {
                 padding: 5px 50px 5px 10px;
                 /* Add padding on the right for arrow space */
-                width: 100%;
+                width: 150%;
                 /* Ensure input field is above the arrow icon */
                 border: 2px solid rgb(86, 86, 108);
                 /* Set border color to RGB (84, 104, 231) */
@@ -242,20 +164,28 @@
             footer .py-2 {
                 width: 100%;
             }
+
         }
 
-        @media only screen and (max-width: 321px) {
-            html {
-                width: 138%;
+        /* Media query for mobile portrait */
+        @media only screen and (max-width: 569px) {
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
             }
 
-            footer .py-2 {
+            footer {
                 background-color: rgb(35, 35, 64);
                 background-size: cover;
                 background-position: bottom;
                 color: white;
-                /* Set height to 400px or adjust as needed */
-                height: 100%;
+                /* Set height to 200px or adjust as needed */
+                height: 800px;
                 /* Add padding to push content upwards */
                 padding-top: 40px;
                 /* Flexbox to align content vertically */
@@ -264,20 +194,63 @@
                 justify-content: space-between;
             }
 
+            footer .gambarlogo {
+                padding-bottom: 12%;
+                width: 140px;
+            }
+
+            footer .kolomlogo {
+                width: 90%;
+            }
+
+            footer .company {
+                width: 30%;
+                margin-left: 0;
+            }
+
+            footer .features {
+                width: 35%;
+            }
+
+            footer .contact {
+                width: 35%;
+            }
+
+            footer .us {
+                width: 86%;
+            }
+
+            footer .stay {
+                width: 55%;
+            }
+
+            footer .pstay {
+                margin-bottom: 4%;
+                margin-top: -4%;
+            }
+
+            footer .copyright {
+                color: white;
+                width: 100%;
+                margin-left: 5%;
+                margin-top: 25%;
+                margin-bottom: -1%;
+            }
+
             footer .row {
                 align-items: flex-start;
                 /* Change this to flex-start */
-                margin-left: 5%;
+                margin-left: 1%;
+                margin-right: -8%;
             }
 
             /* Optional styles to adjust spacing and alignment */
             footer h5 {
-                margin-bottom: 5%;
+                margin-bottom: 10%;
             }
 
             footer p {
-                margin-bottom: 4%;
-                color: white;
+                margin-bottom: 10%;
             }
 
             /* Change text color to RGB (84, 104, 231) */
@@ -288,7 +261,194 @@
             footer .custom-container {
                 /* Set the desired width and height */
                 width: 90%;
-                height: 10%;
+                height: 20%;
+                /* Optional: Adjust padding or margin as needed */
+                padding: -5%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 60px;
+                /* To center the container horizontally */
+
+            }
+
+            /* Style the input field container */
+            footer .input-container {
+                position: relative;
+            }
+
+            footer .arrow-icon {
+                /* Styling for arrow icon */
+                position: absolute;
+                top: 50%;
+                right: -3%;
+                transform: translateY(-50%);
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+
+            /* Style the input field */
+            footer input[type="text"] {
+                padding: 6px 55px 8px 15px;
+                /* Add padding on the right for arrow space */
+                width: 105%;
+                /* Ensure input field is above the arrow icon */
+                border: 2px solid rgb(86, 86, 108);
+                /* Set border color to RGB (84, 104, 231) */
+                border-radius: 5px;
+                /* Add border-radius for rounded corners */
+                background-color: rgb(86, 86, 108);
+                /* Change the background color */
+                color: white;
+                /* Change the text color */
+            }
+
+            /* Style the placeholder text */
+            footer input[type="text"]::placeholder {
+                color: white;
+                /* Change the placeholder text color */
+            }
+
+            /* Remove the outline on focus but maintain accessibility */
+            footer input[type="text"]:focus {
+                border-color: rgb(84, 104, 231);
+                box-shadow: 0 0 0 3px rgba(84, 104, 231, 0.2);
+            }
+
+            .card {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                /* Add shadow effect */
+                transition: box-shadow 0.3s ease-in-out;
+                /* Add smooth transition */
+                border-radius: 1%;
+            }
+
+            .card:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                /* Increase shadow on hover */
+            }
+
+            footer .logo {
+                width: 160px;
+                margin-top: -8%;
+                margin-bottom: 5%;
+            }
+
+            footer .py-2 {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 321px) {
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+
+
+            footer {
+                background-color: rgb(35, 35, 64);
+                background-size: cover;
+                background-position: bottom;
+                color: white;
+                /* Set height to 400px or adjust as needed */
+                height: 1340px;
+                /* Add padding to push content upwards */
+                padding-top: 40px;
+                /* Flexbox to align content vertically */
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            footer .gambarlogo {
+                padding-bottom: 16%;
+                width: 140px;
+            }
+
+            footer .kolomlogo {
+                width: 90%;
+                margin-bottom: 13%;
+            }
+
+            footer .company {
+                order: 2;
+                width: 90%;
+                margin-left: 0;
+                margin-bottom: 13%;
+            }
+
+            footer .features {
+                order: 3;
+                width: 90%;
+                margin-bottom: 13%;
+            }
+
+            footer .contact {
+                order: 4;
+                width: 90%;
+                margin-bottom: 13%;
+            }
+
+            footer .us {
+                width: 62%;
+            }
+
+            footer .stay {
+                order: 1;
+                width: 60%;
+                margin-bottom: 5%;
+            }
+
+            footer .pstay {
+                /* Mengubah lebar kolom "Stay up to date" menjadi 100% */
+                width: 100%;
+                /* Mengatur margin atas dan bawah agar elemen berada di bawah logo */
+                margin-top: 8%;
+                margin-bottom: 5%;
+            }
+
+            footer .copyright {
+                color: white;
+                width: 100%;
+                margin-left: 5%;
+                margin-top: -20%;
+                margin-bottom: -50%;
+            }
+
+            footer .copy{
+                margin-top: 0;
+            }
+
+            footer .row {
+                align-items: flex-start;
+                /* Change this to flex-start */
+                margin-left: 5%;
+            }
+
+            /* Optional styles to adjust spacing and alignment */
+            footer h5 {
+                margin-bottom: 10%;
+            }
+
+            footer p {
+                margin-bottom: 10%;
+            }
+
+            /* Change text color to RGB (84, 104, 231) */
+            footer h5.text-color-custom {
+                color: rgb(84, 104, 231);
+            }
+
+            footer .custom-container {
+                /* Set the desired width and height */
+                width: 90%;
+                height: 75%;
                 /* Optional: Adjust padding or margin as needed */
                 /* Avoid using negative padding values */
                 padding: 5px 0;
@@ -305,7 +465,7 @@
                 /* Styling for arrow icon */
                 position: absolute;
                 top: 50%;
-                right: -40%;
+                right: -75%;
                 transform: translateY(-50%);
                 width: 30px;
                 height: 30px;
@@ -316,7 +476,7 @@
             footer input[type="text"] {
                 padding: 5px 50px 5px 10px;
                 /* Add padding on the right for arrow space */
-                width: 100%;
+                width: 175%;
                 /* Ensure input field is above the arrow icon */
                 border: 2px solid rgb(86, 86, 108);
                 /* Set border color to RGB (84, 104, 231) */
@@ -370,19 +530,18 @@
     <footer class="py-2">
         <div class="custom-container">
             <div class="row">
-                <div class="col-md-3 col-lg-4 col-xl-2">
-                    <img src="images/Home-Desktop/Footer/team..png" alt="Your Company Logo" width="151px"
-                        style="padding-bottom: 12%;" />
+                <div class="kolomlogo col-md-3 col-lg-4 col-xl-2">
+                    <img class="gambarlogo" src="images/Home-Desktop/Footer/team..png" alt="Your Company Logo" />
                     <p class="logo">Collaboration Platform for Modern Team</p>
                 </div>
-                <div class="col-md-5 col-lg-4 col-xl-2 ml-5 mt-4 mt-md-0">
+                <div class="company col-md-4 col-lg-4 col-xl-2 mt-4 mt-md-0">
                     <h5 class="text-left text-color-custom">Company</h5>
                     <!-- List of blog posts or other content here -->
                     <p>Product</p>
                     <p>Blog</p>
                     <p>Support</p>
                 </div>
-                <div class="col-md-5 col-lg-4 col-xl-2 ml-2 mt-4 mt-md-0">
+                <div class="features col-md-4 col-lg-4 col-xl-2 mt-4 mt-md-0">
                     <h5 class="text-left text-color-custom">Features</h5>
                     <!-- List of blog posts or other content here -->
                     <p>Screen Sharing</p>
@@ -390,16 +549,16 @@
                     <p>File Sharing</p>
                     <p>User Management</p>
                 </div>
-                <div class="col-md-5 col-lg-4 col-xl-2 mt-4 mt-md-0">
+                <div class="contact col-md-4 col-lg-4 col-xl-2 mt-4 mt-md-0">
                     <h5 class="text-left text-color-custom">Contact Us</h5>
                     <!-- List of blog posts or other content here -->
                     <p>info@teamapp.com</p>
                     <p>1-800-200-300</p>
-                    <p style="width: 80%;">1010 Sunset Blv. Palo Alto, California</p>
+                    <p class="us">1010 Sunset Blv. Palo Alto, California</p>
                 </div>
-                <div class="col-md-5 col-lg-4 col-xl-2">
+                <div class="stay col-md-4 col-lg-4 col-xl-2 mt-4 mt-md-0">
                     <h5 class="text-left text-color-custom">Stay up to date</h5>
-                    <p style="width: 150%;">Subscribe to our newsletter</p>
+                    <p class="pstay" style="width: 150%;">Subscribe to our newsletter</p>
                     <div class="input-container text-left">
                         <input type="text" placeholder="Email">
                         <a href="http://127.0.0.1:5500/Landing_page.html#" class="arrow-icon"><img
@@ -411,8 +570,8 @@
         <!-- Move copyright outside the container -->
         <div class="container">
             <div class="row">
-                <div class="col-md-2 text-left">
-                    <p style="margin-bottom: 15%;margin-left: -51%;">&copy; Copyright Team Inc.</p>
+                <div class="copyright">
+                    <p class="copy">&copy; Copyright Team Inc.</p>
                 </div>
             </div>
         </div>

@@ -2,125 +2,461 @@
 <html lang="en">
 
 <head>
+    <title>Home - Landing Page</title>
+    <!-- Include Bootstrap CSS -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap 4 Responsive Layout Example</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- Font Text -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca" rel="stylesheet">
+    <style>
+        .review-carousel {
+            overflow: hidden;
+            display: flex;
+            transition: transform 0.3s ease;
+            height: 105%;
+        }
+
+
+        .review-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Add shadow effect */
+            transition: box-shadow 0.3s ease-in-out;
+            /* Optional: Add rounded corners for a better look */
+            flex: 0 0 27%;
+            /* Adjust the width as needed */
+            margin-right: 6%;
+        }
+
+        /* Increase shadow on hover */
+        .review-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card-no-mirror {
+            box-shadow: none;
+        }
+
+        .review-card .rating {
+            margin-bottom: 10px;
+        }
+
+        .review-card .review-content {
+            max-width: 100%;
+            /* Set maximum width for the review content */
+            padding: 2%;
+            /* Add some padding to the content */
+        }
+
+
+
+        .review-card .avatar-img {
+            margin-bottom: 10px;
+        }
+
+        .review-card .reviewer-name h4 {
+            margin: 0;
+            font-size: 120%;
+        }
+
+        .review-card .reviewer-name p {
+            display: block;
+
+            /* Sesuaikan style lainnya jika diperlukan */
+            margin-bottom: 10px;
+        }
+
+        .review-card .review-content p {
+            margin-bottom: 1%;
+            /* Remove margin-bottom as it's not needed anymore */
+            height: 2%;
+            /* Enable vertical scrolling if the content exceeds the fixed height */
+        }
+
+        .card-img-top {
+            height: 45%;
+            /* Sesuaikan tinggi dengan ukuran card lain */
+            object-fit: cover;
+        }
+
+        /* Custom styles for the Next and Previous buttons */
+        .custom-btn {
+            background-color: #ffffff;
+            /* Change the background color here */
+            color: #ffffff;
+            /* Change the text color (if needed) */
+            border: none;
+            /* Adjust the padding as needed */
+            border-radius: 5%;
+            /* Add rounded corners */
+            cursor: pointer;
+        }
+
+        /* Custom styles for the Next and Previous button images */
+        .custom-btn img {
+            width: 60%;
+            /* Adjust the image width as needed */
+            height: 60%;
+            /* Adjust the image height as needed */
+        }
+
+        /* Media query for mobile landscape */
+        @media only screen and (max-width: 767px) {
+            .review-carousel {
+                height: auto;
+                overflow-x: scroll;
+                white-space: nowrap;
+            }
+
+            .review-card {
+                width: 80%;
+                margin: 0 auto;
+                margin-bottom: 30px;
+            }
+
+            .review-card-no-mirror {
+                width: 80%;
+                margin: 0 auto;
+                margin-bottom: 30px;
+            }
+
+            .custom-btn {
+                margin: 10px;
+            }
+        }
+
+        /* Media query for mobile portrait */
+        @media only screen and (max-width: 576px) {
+            .custom-container {
+                width: 100%;
+                padding: 0;
+            }
+
+            /* ... Existing CSS Rules ... */
+
+            .review-carousel {
+                overflow: hidden;
+                white-space: nowrap;
+                display: flex;
+                transition: transform 0.3s ease;
+                height: 120%;
+            }
+
+            .review-card {
+                flex: 0 0 80%;
+                margin-right: 6%;
+            }
+
+            .review-card-no-mirror {
+                flex: 0 0 80%;
+                margin-right: 6%;
+            }
+
+            .card-img-top {
+                height: 30%;
+            }
+
+            .review-card .review-content p {
+                margin-bottom: 2%;
+                height: auto;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand mr-3">Tutorial Republic</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">Services</a>
-                    <a href="#" class="nav-item nav-link">About</a>
-                    <a href="#" class="nav-item nav-link">Contact</a>
-                </div>
-                <div class="navbar-nav ml-auto">
-                    <a href="#" class="nav-item nav-link">Register</a>
-                    <a href="#" class="nav-item nav-link">Login</a>
+
+    <!-- Your landing page content here -->
+    <section id="what-people-say" class="py-5">
+        <div class="container mt-5 mb-5">
+            <div id="reviewCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row" style="margin-left: -1%;">
+                            <div class="col-md-12 mb-5">
+                                <div class="review-carousel">
+                                    <!-- Review Card Pertama -->
+                                    <div class="col-md-4" style="margin-right: -3%;">
+                                        <div class="card review-card">
+                                            <div class="card-body" style="margin:-1%;">
+                                                <div class="review-content">
+                                                    <div class="rating text-left">
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                    </div>
+                                                    <br>
+                                                    <p>Vestibulum eu quam nec neque </p>
+                                                    <p>pellentesque efficitur id eget nisl.</p>
+                                                    <p>Proin porta est convallis lacus</p>
+                                                    <p>blandit pretium sed non enim.</p>
+                                                    <p>Maecenas lacinia non orci at </p>
+                                                    <p>aliquam. Donec finibus, urna</p>
+                                                    <p> bibendum ultricies laoreet.</p>
+                                                    <br>
+                                                    <div class="row" style="width: 140%;">
+                                                        <div class="col-md-2">
+                                                            <div class="avatar-img text-center">
+                                                                <img src="images/Home-Desktop/Review Carousel/Ellipse.png"
+                                                                    alt="Avatar" width="55" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-15" style="margin-left: 10%;">
+                                                            <div class="reviewer-name">
+                                                                <h4><strong>Chealsea Morgan</strong></h4>
+                                                                <p>CEO ot Subway</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Review Card Kedua -->
+                                    <div class="col-md-4" style="margin-right: -3%;">
+                                        <div class="card review-card">
+                                            <div class="card-body" style="margin:-1%;">
+                                                <div class="review-content">
+                                                    <div class="rating text-left">
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                    </div>
+                                                    <br>
+                                                    <p> In a laoreet purus. Integer turpis</p>
+                                                    <p>quam, laoreet id orci nec, ultrices</p>
+                                                    <p>lacinia nunc. Aliquam erat</p>
+                                                    <p>volutpat. Curabitur fringilla in</p>
+                                                    <p>purus eget egestas. Etiam quis. </p>
+                                                    <br>
+                                                    <div class="row" style="width: 130%;">
+                                                        <div class="col-md-2">
+                                                            <div class="avatar-img text-center">
+                                                                <img src="images/Home-Desktop/Review Carousel/Ellipse1.png"
+                                                                    alt="Avatar" width="55" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-15" style="margin-left: 10%;">
+                                                            <div class="reviewer-name">
+                                                                <h4><strong>Nick Cave</strong></h4>
+                                                                <p>CMO ot Nokia</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Review Card Ketiga -->
+                                    <div class="col-md-4" style="margin-right: -1%;">
+                                        <div class="card review-card">
+                                            <div class="card">
+                                                <div class="card-body" style="margin:-1%;">
+                                                    <div class="review-content">
+                                                        <div class="rating text-left">
+                                                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                                alt="Rating" />
+                                                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                                alt="Rating" />
+                                                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                                alt="Rating" />
+                                                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                                alt="Rating" />
+                                                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                                alt="Rating" />
+                                                        </div>
+                                                        <br>
+                                                        <p> Aliquam pulvinar vestibulum</p>
+                                                        <p>blandit. Donec sed nisl libero.</p>
+                                                        <p>Fusce dignissim luctus sem eu</p>
+                                                        <p>dapibus. Pellentesque vulputate</p>
+                                                        <p>quam a quam volutpat, sed</p>
+                                                        <p> ullamcorper erat commodo. </p>
+                                                        <br>
+                                                        <div class="row" style="width: 120%;">
+                                                            <div class="col-md-2">
+                                                                <div class="avatar-img text-center">
+                                                                    <img src="images/Home-Desktop/Review Carousel/Ellipse2.png"
+                                                                        alt="Avatar" width="55" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-15" style="margin-left: 10%;">
+                                                                <div class="reviewer-name">
+                                                                    <h4><strong>Lana Rosenfeld</strong></h4>
+                                                                    <p>Senior VP ot Pinterest</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Review Card Keempat -->
+                                    <div class="review-card review-card-no-mirror">
+                                        <div class="card">
+                                            <div class="card-body" style="margin:-1%;">
+                                                <div class="review-content">
+                                                    <div class="rating text-left">
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                        <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png"
+                                                            alt="Rating" />
+                                                    </div>
+                                                    <br>
+                                                    <p style="margin-right: 20%;" class="review-text half-review-text">
+                                                        Porta |</p>
+                                                    <p>pellent</p>
+                                                    <p>Morbi</p>
+                                                    <p>ullame</p>
+                                                    <p>tincidt</p>
+                                                    <br>
+                                                    <div class="row" style="width: 120%;">
+                                                        <div class="col-md-2">
+                                                            <div class="avatar-img text-center">
+                                                                <img src="images/Home-Desktop/Review Carousel/Ellipse3.png"
+                                                                    alt="Avatar" width="55" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-15" style="margin-left: 10%;">
+                                                            <div class="reviewer-name">
+                                                                <h4><strong>Lana Rosenfeld</strong></h4>
+                                                                <p>Senior VP ot Pinterest</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="card review-card d-none">
+                                        <img src="images/Home-Desktop/Review Carousel/Ellipse1.png" class="card-img-top"
+                                            alt="Avatar 5">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nama 5</h5>
+                                            <p class="card-text">Pekerjaan 5</p>
+                                            <div class="rating">
+                                                <span>&#9733;</span>
+                                                <span>&#9733;</span>
+                                                <span>&#9733;</span>
+                                                <span>&#9733;</span>
+                                                <span>&#9733;</span>
+                                            </div>
+                                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                                elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end" style="margin-right: 16%;">
+                            <!-- Previous Button as Image -->
+                            <button class="custom-btn" id="prevBtn">
+                                <img src="images/Home-Desktop/Review Carousel/Vector kiri.png" alt="Previous" />
+                            </button>
+
+                            <!-- Next Button as Image -->
+                            <button class="custom-btn" id="nextBtn">
+                                <img src="images/Home-Desktop/Review Carousel/Vector kanan.png" alt="Next" />
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Learn to Create Websites</h1>
-            <p class="lead">In today's world internet is the most popular way of connecting with the people. At <a
-                    href="https://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a> you will learn the
-                essential web development technologies along with real life practice examples, so that you can create
-                your own website to connect with the people around the world.</p>
-            <p><a href="https://www.tutorialrepublic.com" target="_blank" class="btn btn-success btn-lg">Get started
-                    today</a></p>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <h2>HTML</h2>
-                <p>HTML is the standard markup language for describing the structure of the web pages. Our HTML
-                    tutorials will help you to understand the basics of latest HTML5 language, so that you can create
-                    your own website.</p>
-                <p><a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank"
-                        class="btn btn-success">Learn More »</a></p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <h2>CSS</h2>
-                <p>CSS is used for describing the presentation of web pages. CSS can save a lot of time and effort. Our
-                    CSS tutorials will help you to learn the essentials of latest CSS3, so that you can control the
-                    style and layout of your website.</p>
-                <p><a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank"
-                        class="btn btn-success">Learn More »</a></p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <h2>JavaScript</h2>
-                <p>JavaScript is the most popular and widely used client-side scripting language. Our JavaScript
-                    tutorials will provide in-depth knowledge of the JavaScript including ES6 features, so that you can
-                    create interactive websites.</p>
-                <p><a href="https://www.tutorialrepublic.com/javascript-tutorial/" target="_blank"
-                        class="btn btn-success">Learn More »</a></p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <h2>Bootstrap</h2>
-                <p>Bootstrap is a powerful front-end framework for faster and easier web development. Our Bootstrap
-                    tutorials will help you to learn all the features of latest Bootstrap 4 framework so that you can
-                    easily create responsive websites.</p>
-                <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank"
-                        class="btn btn-success">Learn More »</a></p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <h2>PHP</h2>
-                <p>PHP is the most popular server-side scripting language for creating dynamic web pages. Our PHP
-                    tutorials will help you to learn all the features of latest PHP7 scripting language so that you can
-                    easily create dynamic websites.</p>
-                <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank"
-                        class="btn btn-success">Learn More »</a></p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <h2>SQL</h2>
-                <p>SQL is a standard language designed for managing data in relational database management system. Our
-                    SQL tutorials will help you to learn the fundamentals of the SQL language so that you can
-                    efficiently manage your databases.</p>
-                <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank"
-                        class="btn btn-success">Learn More »</a></p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <h2>References</h2>
-                <p>Our references section outlines all the standard HTML5 tags and CSS3 properties along with other
-                    useful references such as color names and values, character entities, web safe fonts, language
-                    codes, HTTP messages, and more.</p>
-                <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank"
-                        class="btn btn-success">Learn More »</a></p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <h2>FAQ</h2>
-                <p>Our Frequently Asked Questions (FAQ) section is an extensive collection of FAQs that provides quick
-                    and working solution of common questions and queries related to web design and development with live
-                    demo.</p>
-                <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank"
-                        class="btn btn-success">Learn More »</a></p>
-            </div>
-        </div>
-        <hr>
-        <footer>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>Copyright © 2019 Tutorial Republic</p>
-                </div>
-                <div class="col-md-6 text-md-right">
-                    <a href="#" class="text-dark">Terms of Use</a>
-                    <span class="text-muted mx-2">|</span>
-                    <a href="#" class="text-dark">Privacy Policy</a>
-                </div>
-            </div>
-        </footer>
-    </div>
+    </section>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JavaScript for Carousel -->
+    <script>
+        // jQuery Document Ready
+        $(document).ready(function () {
+            // Initialize the carousel
+            const cardCount = $('.review-carousel .card').length;
+            const cardsPerPage = 4;
+            let currentIndex = 0;
+
+            function showCards() {
+                const cardWidth = $('.review-carousel .card').outerWidth(true);
+                const maxIndex = Math.max(cardCount - cardsPerPage, 0);
+                const offset = -Math.min(currentIndex, maxIndex) * cardWidth * cardsPerPage;
+                $('.review-carousel').css('transform', `translateX(${offset}px)`);
+
+                // Menyembunyikan card nomor 5 saat currentIndex mencapai cardCount - 1
+                if (currentIndex === cardCount - 1) {
+                    $('.review-carousel .card').eq(cardsPerPage).addClass('d-none');
+                } else {
+                    $('.review-carousel .card').eq(cardsPerPage).removeClass('d-none');
+                }
+
+                // Menampilkan card nomor 5 jika currentIndex mencapai cardCount - 2
+                if (currentIndex === cardCount - 2) {
+                    $('.review-carousel .card').eq(cardsPerPage + 1).removeClass('d-none');
+                }
+            }
+
+            // Handle Next button click
+            $('#nextBtn').on('click', function () {
+                currentIndex += 1;
+                if (currentIndex > cardCount - cardsPerPage) {
+                    currentIndex = cardCount - cardsPerPage;
+                }
+                showCards();
+            });
+
+            // Handle Previous button click
+            $('#prevBtn').on('click', function () {
+                currentIndex -= 1;
+                if (currentIndex < 0) {
+                    currentIndex = 0;
+                }
+                showCards();
+            });
+
+            // Show initial cards
+            showCards();
+        });
+    </script>
 </body>
 
 </html>
