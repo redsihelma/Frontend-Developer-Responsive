@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home - Landing Page</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    /* Custom CSS for footer layout */
+    footer {
+      background-image: url('images/Home-Desktop/Footer/background.png');
+      background-size: cover;
+      background-position: bottom;
+      color: white;
+      /* Set height to 200px or adjust as needed */
+      height: 450px;
+      /* Add padding to push content upwards */
+      padding-top: 40px;
+      /* Flexbox to align content vertically */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    footer .row {
+      align-items: center;
+    }
+
+    /* Optional styles to adjust spacing and alignment */
+    footer h5 {
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      margin-bottom: 0;
+    }
+
+    /* Change text color to RGB (84, 104, 231) */
+    footer h5.text-color-custom {
+      color: rgb(84, 104, 231);
+    }
+
+    footer .custom-container {
+      /* Set the desired width and height */
+      width: 90%;
+      height: 10%;
+      /* Optional: Adjust padding or margin as needed */
+      padding: -5%;
+      margin: 0 auto;
+      /* To center the container horizontally */
+    }
+
+    /* Style the input field container */
+    footer .input-container {
+      position: relative;
+    }
+
+    footer .arrow-icon {
+      /* Styling for arrow icon */
+      position: absolute;
+      top: 70%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    /* Style the input field */
+    footer input[type="text"] {
+      padding: 5px 50px 5px 10px;
+      /* Add padding on the right for arrow space */
+      width: 100%;
+      /* Ensure input field is above the arrow icon */
+      border: 2px solid rgb(86, 86, 108);
+      /* Set border color to RGB (84, 104, 231) */
+      border-radius: 5px;
+      /* Add border-radius for rounded corners */
+      background-color: rgb(86, 86, 108);
+      /* Change the background color */
+      color: white;
+      /* Change the text color */
+    }
+
+    /* Style the placeholder text */
+    footer input[type="text"]::placeholder {
+      color: white;
+      /* Change the placeholder text color */
+    }
+
+    /* Remove the outline on focus but maintain accessibility */
+    footer input[type="text"]:focus {
+      border-color: rgb(84, 104, 231);
+      box-shadow: 0 0 0 3px rgba(84, 104, 231, 0.2);
+    }
+
+    .card {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Add shadow effect */
+      transition: box-shadow 0.3s ease-in-out;
+      /* Add smooth transition */
+      border-radius: 1px;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      /* Increase shadow on hover */
+    }
+
+    .review-carousel {
+      overflow: hidden;
+      display: flex;
+      transition: transform 0.3s ease;
+      height: 105%;
+    }
+
+
+    .review-card {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Add shadow effect */
+      transition: box-shadow 0.3s ease-in-out;
+      /* Optional: Add rounded corners for a better look */
+      flex: 0 0 27%;
+      /* Adjust the width as needed */
+      margin-right: 6%;
+    }
+
+    /* Increase shadow on hover */
+    .review-card:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .review-card-no-mirror {
+      box-shadow: none;
+    }
+
+    .review-card .rating {
+      margin-bottom: 10px;
+    }
+
+    .review-card .review-content {
+      max-width: 100%;
+      /* Set maximum width for the review content */
+      padding: 2%;
+      /* Add some padding to the content */
+    }
+
+
+
+    .review-card .avatar-img {
+      margin-bottom: 10px;
+    }
+
+    .review-card .reviewer-name h4 {
+      margin: 0;
+      font-size: 120%;
+    }
+
+    .review-card .reviewer-name p {
+      display: block;
+
+      /* Sesuaikan style lainnya jika diperlukan */
+      margin-bottom: 10px;
+    }
+
+    .review-card .review-content p {
+      margin-bottom: 1%;
+      /* Remove margin-bottom as it's not needed anymore */
+      height: 2%;
+      /* Enable vertical scrolling if the content exceeds the fixed height */
+    }
+
+    .card-img-top {
+      height: 45%;
+      /* Sesuaikan tinggi dengan ukuran card lain */
+      object-fit: cover;
+    }
+
+    /* Custom styles for the Next and Previous buttons */
+    .custom-btn {
+      background-color: #ffffff;
+      /* Change the background color here */
+      color: #ffffff;
+      /* Change the text color (if needed) */
+      border: none;
+      /* Adjust the padding as needed */
+      border-radius: 5%;
+      /* Add rounded corners */
+      cursor: pointer;
+    }
+
+    /* Custom styles for the Next and Previous button images */
+    .custom-btn img {
+      width: 60%;
+      /* Adjust the image width as needed */
+      height: 60%;
+      /* Adjust the image height as needed */
+    }
+
+    /* Media query for mobile landscape */
+    @media only screen and (max-width: 767px) {
+      .review-carousel {
+        height: auto;
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+
+      .review-card {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+
+      .review-card-no-mirror {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+
+      .custom-btn {
+        margin: 10px;
+      }
+    }
+
+    /* Media query for mobile portrait */
+    @media only screen and (max-width: 576px) {
+      .custom-container {
+        width: 100%;
+        padding: 0;
+      }
+
+      /* ... Existing CSS Rules ... */
+
+      .review-carousel {
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        transition: transform 0.3s ease;
+        height: 120%;
+      }
+
+      .review-card {
+        flex: 0 0 80%;
+        margin-right: 6%;
+      }
+
+      .review-card-no-mirror {
+        flex: 0 0 80%;
+        margin-right: 6%;
+      }
+
+      .card-img-top {
+        height: 30%;
+      }
+
+      .review-card .review-content p {
+        margin-bottom: 2%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Your landing page content here -->
+  <section id="what-people-say" class="py-5">
+    <div class="container mt-5 mb-5">
+      <div id="reviewCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row" style="margin-left: -1%;">
+              <div class="col-md-12 mb-5">
+                <div class="review-carousel">
+                  <!-- Review Card Pertama -->
+                  <div class="col-md-4" style="margin-right: -3%;">
+                    <div class="card review-card">
+                      <div class="card-body" style="margin:-1%;">
+                        <div class="review-content">
+                          <div class="rating text-left">
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                          </div>
+                          <br>
+                          <p>Vestibulum eu quam nec neque </p>
+                          <p>pellentesque efficitur id eget nisl.</p>
+                          <p>Proin porta est convallis lacus</p>
+                          <p>blandit pretium sed non enim.</p>
+                          <p>Maecenas lacinia non orci at </p>
+                          <p>aliquam. Donec finibus, urna</p>
+                          <p> bibendum ultricies laoreet.</p>
+                          <br>
+                          <div class="row" style="width: 140%;">
+                            <div class="col-md-2">
+                              <div class="avatar-img text-center">
+                                <img src="images/Home-Desktop/Review Carousel/Ellipse.png" alt="Avatar" width="55" />
+                              </div>
+                            </div>
+                            <div class="col-md-15" style="margin-left: 10%;">
+                              <div class="reviewer-name">
+                                <h4><strong>Chealsea Morgan</strong></h4>
+                                <p>CEO ot Subway</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Review Card Kedua -->
+                  <div class="col-md-4" style="margin-right: -3%;">
+                    <div class="card review-card">
+                      <div class="card-body" style="margin:-1%;">
+                        <div class="review-content">
+                          <div class="rating text-left">
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                          </div>
+                          <br>
+                          <p> In a laoreet purus. Integer turpis</p>
+                          <p>quam, laoreet id orci nec, ultrices</p>
+                          <p>lacinia nunc. Aliquam erat</p>
+                          <p>volutpat. Curabitur fringilla in</p>
+                          <p>purus eget egestas. Etiam quis. </p>
+                          <br>
+                          <div class="row" style="width: 130%;">
+                            <div class="col-md-2">
+                              <div class="avatar-img text-center">
+                                <img src="images/Home-Desktop/Review Carousel/Ellipse1.png" alt="Avatar" width="55" />
+                              </div>
+                            </div>
+                            <div class="col-md-15" style="margin-left: 10%;">
+                              <div class="reviewer-name">
+                                <h4><strong>Nick Cave</strong></h4>
+                                <p>CMO ot Nokia</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Review Card Ketiga -->
+                  <div class="col-md-4" style="margin-right: -1%;">
+                    <div class="card review-card">
+                      <div class="card">
+                        <div class="card-body" style="margin:-1%;">
+                          <div class="review-content">
+                            <div class="rating text-left">
+                              <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                              <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                              <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                              <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                              <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            </div>
+                            <br>
+                            <p> Aliquam pulvinar vestibulum</p>
+                            <p>blandit. Donec sed nisl libero.</p>
+                            <p>Fusce dignissim luctus sem eu</p>
+                            <p>dapibus. Pellentesque vulputate</p>
+                            <p>quam a quam volutpat, sed</p>
+                            <p> ullamcorper erat commodo. </p>
+                            <br>
+                            <div class="row" style="width: 120%;">
+                              <div class="col-md-2">
+                                <div class="avatar-img text-center">
+                                  <img src="images/Home-Desktop/Review Carousel/Ellipse2.png" alt="Avatar" width="55" />
+                                </div>
+                              </div>
+                              <div class="col-md-15" style="margin-left: 10%;">
+                                <div class="reviewer-name">
+                                  <h4><strong>Lana Rosenfeld</strong></h4>
+                                  <p>Senior VP ot Pinterest</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Review Card Keempat -->
+                  <div class="review-card review-card-no-mirror">
+                    <div class="card">
+                      <div class="card-body" style="margin:-1%;">
+                        <div class="review-content">
+                          <div class="rating text-left">
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                            <img src="images/Home-Desktop/Review Carousel/star_purple500_24px.png" alt="Rating" />
+                          </div>
+                          <br>
+                          <p style="margin-right: 20%;" class="review-text half-review-text">
+                            Porta |</p>
+                          <p>pellent</p>
+                          <p>Morbi</p>
+                          <p>ullame</p>
+                          <p>tincidt</p>
+                          <br>
+                          <div class="row" style="width: 120%;">
+                            <div class="col-md-2">
+                              <div class="avatar-img text-center">
+                                <img src="images/Home-Desktop/Review Carousel/Ellipse3.png" alt="Avatar" width="55" />
+                              </div>
+                            </div>
+                            <div class="col-md-15" style="margin-left: 10%;">
+                              <div class="reviewer-name">
+                                <h4><strong>Lana Rosenfeld</strong></h4>
+                                <p>Senior VP ot Pinterest</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="card review-card d-none">
+                    <img src="images/Home-Desktop/Review Carousel/Ellipse1.png" class="card-img-top" alt="Avatar 5">
+                    <div class="card-body">
+                      <h5 class="card-title">Nama 5</h5>
+                      <p class="card-text">Pekerjaan 5</p>
+                      <div class="rating">
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                        <span>&#9733;</span>
+                      </div>
+                      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-end" style="margin-right: 16%;">
+              <!-- Previous Button as Image -->
+              <button class="custom-btn" id="prevBtn">
+                <img src="images/Home-Desktop/Review Carousel/Vector kiri.png" alt="Previous" />
+              </button>
+
+              <!-- Next Button as Image -->
+              <button class="custom-btn" id="nextBtn">
+                <img src="images/Home-Desktop/Review Carousel/Vector kanan.png" alt="Next" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="py-3" style="width: 100%;">
+    <div class="custom-container">
+      <div class="col-md-3 d-flex justify-content-center">
+        <img src="images/Home-Desktop/Footer/background.png" alt="Background" width="100" />
+      </div>
+      <div class="row">
+        <div class="col-md-1 d-flex justify-content-right">
+          <img src="images/Home-Desktop/Footer/team..png" alt="Your Company Logo" width="100" />
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-right text-color-custom">Company</h5>
+        </div>
+        <div class="col-md-2">
+          <h5 class="text-right text-color-custom">Features</h5>
+          <!-- List of features here -->
+        </div>
+        <div class="col-md-2">
+          <h5 class="text-right text-color-custom">Contact Us</h5>
+          <!-- Contact info here -->
+        </div>
+        <div class="col-md-2">
+          <h5 class="text-right text-color-custom">Stay up to date</h5>
+          <!-- Social media icons here -->
+        </div>
+      </div>
+      <!-- Add a new row for the collaboration platform -->
+      <div class="row">
+        <div class="col-md-2 text-left">
+          <p>Collaboration Platform for Modern Team</p>
+        </div>
+        <div class="col-md-1 text-left" style="margin-left: 15%;">
+          <!-- List of blog posts or other content here -->
+          <p>Product</p>
+          <p>Blog</p>
+          <p>Support</p>
+        </div>
+        <div class="col-md-2 text-left" style="margin-left: 9%;">
+          <!-- List of blog posts or other content here -->
+          <p>Screen Sharing</p>
+          <p>iOS & Android Apps</p>
+          <p>File Sharing</p>
+          <p>User Management</p>
+        </div>
+        <div class="col-md-2 text-left" style="margin-left: -2%;">
+          <!-- List of blog posts or other content here -->
+          <p>info@teamapp.com</p>
+          <p>1-800-200-300</p>
+          <p>1010 Sunset Blv.</p>
+          <p>Palo Alto, California</p>
+        </div>
+        <!-- Text field here -->
+        <div class="input-container text-left" style="margin-left: -2%; margin-bottom: 2%;">
+          <p>Subscribe to our newsletter</p>
+          <div style="margin-top: 2%;">
+            <input type="text" placeholder="Email">
+            <a href="http://127.0.0.1:5500/Landing_page.html#" class="arrow-icon"><img
+                src="images/Home-Desktop/Footer/arrow_forward_24px.png" alt="Arrow" /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Move copyright outside the container -->
+    </div>
+    </div>
+    <!-- Move copyright outside the container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 text-left">
+          <p style="margin-bottom: 1%;">&copy; Copyright Team Inc.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include Bootstrap JS and jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- JavaScript for Carousel -->
+  <script>
+    // jQuery Document Ready
+    $(document).ready(function () {
+      // Initialize the carousel
+      const cardCount = $('.review-carousel .card').length;
+      const cardsPerPage = 4;
+      let currentIndex = 0;
+
+      function showCards() {
+        const cardWidth = $('.review-carousel .card').outerWidth(true);
+        const maxIndex = Math.max(cardCount - cardsPerPage, 0);
+        const offset = -Math.min(currentIndex, maxIndex) * cardWidth * cardsPerPage;
+        $('.review-carousel').css('transform', `translateX(${offset}px)`);
+
+        // Menyembunyikan card nomor 5 saat currentIndex mencapai cardCount - 1
+        if (currentIndex === cardCount - 1) {
+          $('.review-carousel .card').eq(cardsPerPage).addClass('d-none');
+        } else {
+          $('.review-carousel .card').eq(cardsPerPage).removeClass('d-none');
+        }
+
+        // Menampilkan card nomor 5 jika currentIndex mencapai cardCount - 2
+        if (currentIndex === cardCount - 2) {
+          $('.review-carousel .card').eq(cardsPerPage + 1).removeClass('d-none');
+        }
+      }
+
+      // Handle Next button click
+      $('#nextBtn').on('click', function () {
+        currentIndex += 1;
+        if (currentIndex > cardCount - cardsPerPage) {
+          currentIndex = cardCount - cardsPerPage;
+        }
+        showCards();
+      });
+
+      // Handle Previous button click
+      $('#prevBtn').on('click', function () {
+        currentIndex -= 1;
+        if (currentIndex < 0) {
+          currentIndex = 0;
+        }
+        showCards();
+      });
+
+      // Show initial cards
+      showCards();
+    });
+  </script>
+</body>
+
+</html>
