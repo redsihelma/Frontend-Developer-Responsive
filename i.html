@@ -48,11 +48,11 @@
             }
 
             .barisnm2 {
-                width: 130%;
+                width: 140%;
             }
 
             .barisnm3 {
-                width: 120%;
+                width: 140%;
             }
 
             .barisnm4 {
@@ -73,10 +73,27 @@
 
             .kartu {
                 margin: -1%;
+                width: 98%;
             }
 
             .kartu1 {
-                margin: -3%;
+                margin: -1%;
+                width: 70%;
+
+            }
+
+            .kartu2 {
+                margin: -1%;
+                width: 98%;
+            }
+
+            .kartu3 {
+                margin: -1%;
+                width: 90%;
+            }
+            .d-flex {
+                margin-right: 38%;
+                margin-top: -2%;
             }
 
             .rowkomen {
@@ -84,15 +101,15 @@
             }
 
             .kolomkomen1 {
-                margin-right: -3%;
+                margin-right: -10%;
             }
 
             .kolomkomen2 {
-                margin-right: -3%;
+                margin-right: -11.5%;
             }
 
             .kolomkomen3 {
-                margin-right: -3%;
+                margin-right: -11.5%;
             }
 
             .kolomkomen4 {
@@ -111,8 +128,53 @@
                 margin-right: -3%;
             }
 
+            .kontener {
+                margin-right: 1%;
+                margin-left: 27%;
+                height: 460px;
+            }
+
             .container {
                 width: 74%;
+            }
+
+            .cardo .reviewer-name p {
+                display: block;
+                /* Sesuaikan style lainnya jika diperlukan */
+                margin-bottom: 10px;
+            }
+
+            .cardo .review-content {
+                align-items: center;
+                width: 150%;
+                max-width: 200%;
+                /* Set maksimum lebar konten review card */
+                padding: 2%;
+                /* Padding untuk konten */
+
+            }
+
+            /* Atur ukuran font dan baris baru pada konten review card */
+            .cardo .review-content p {
+                margin-bottom: 15%;
+                /* Contoh menggunakan viewport width (vw) */
+                word-wrap: break-word;
+                /* Membuat teks pindah baris jika melebihi lebar konten dan memisahkan kata */
+                white-space: normal;
+            }
+
+            .cardo {
+                width: 295px;
+                /* Maksimum lebar review card */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: box-shadow 0.3s ease-in-out;
+                flex: 0 0 27%;
+                margin-right: 6%;
+            }
+
+            /* Increase shadow on hover */
+            .cardo:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             }
 
             .review-card:nth-child(4) {
@@ -129,15 +191,15 @@
             }
 
             .review-carousel {
-
                 display: flex;
                 transition: transform 0.3s ease;
                 height: 105%;
+                overflow-x: hidden;
             }
 
 
             .review-card {
-                width: 90%;
+                width: 65%;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 /* Add shadow effect */
                 transition: box-shadow 0.3s ease-in-out;
@@ -223,9 +285,11 @@
             .colgam1 {
                 width: 20%;
             }
-            .colgam2{
+
+            .colgam2 {
                 width: 20%;
             }
+
             .colomnm1 {
                 font-size: 90%;
                 margin-left: 150%;
@@ -367,8 +431,10 @@
             .kolomkomen7 {
                 margin-right: -3%;
             }
+
             .d-flex {
-                margin-right: 20%;
+                margin-right: 50%;
+                margin-top: -5%;
             }
 
             .cardo .reviewer-name p {
@@ -475,42 +541,260 @@
 
         /* Media query for mobile portrait */
         @media only screen and (max-width: 321px) {
-            .custom-container {
-                width: 100%;
-                padding: 0;
+            .colgam1 {
+                width: 20%;
             }
 
-            /* ... Existing CSS Rules ... */
+            .colgam2 {
+                width: 20%;
+            }
+
+            .colomnm1 {
+                font-size: 80%;
+                margin-left: 150%;
+            }
+
+            .colomnm2 {
+                font-size: 90%;
+                margin-left: 150%;
+            }
+
+            .colomnm3 {
+                margin-left: 10%;
+            }
+
+            .colomnm4 {
+                margin-left: 10%;
+            }
+
+            .colomnm5 {
+                margin-left: 10%;
+            }
+
+            .colomnm6 {
+                margin-left: 10%;
+            }
+
+            .colomnm7 {
+                margin-left: 10%;
+            }
+
+            .barisnm1 {
+                width: 20%;
+                flex-wrap: nowrap;
+            }
+
+            .barisnm2 {
+                width: 20%;
+                flex-wrap: nowrap;
+            }
+
+            .barisnm3 {
+                width: 120%;
+            }
+
+            .barisnm4 {
+                width: 120%;
+            }
+
+            .barisnm5 {
+                width: 140%;
+            }
+
+            .barisnm6 {
+                width: 130%;
+            }
+
+            .barisnm7 {
+                width: 120%;
+            }
+
+            .kartu {
+                margin: 2%;
+                width: 100%;
+                padding-right: 3%;
+            }
+
+            .kartu1 {
+                margin: 2%;
+                width: 130%;
+                padding-right: 3%;
+            }
+
+            .kartu2 {
+                margin: -1%;
+                width: 111%;
+            }
+
+            .kartu3 {
+                margin: -1%;
+                width: 111%;
+            }
+
+            .kartu4 {
+                margin: -1%;
+                width: 111%;
+            }
+
+            .kartu5 {
+                margin: -1%;
+                width: 111%;
+            }
+
+            .kartu6 {
+                margin: -1%;
+                width: 111%;
+            }
+
+            .kontener {
+                margin-right: 0;
+                margin-left: -3%;
+                width: 97.9%;
+                height: 460px;
+            }
+
+            .rowkomen {
+                margin-left: -2%;
+                margin-right: -10%;
+                height: 1%;
+            }
+
+            .kolomkomen1 {
+                margin-right: 1%;
+                width: 100%;
+                height: 60%;
+            }
+
+            .kolomkomen2 {
+                margin-right: 5%;
+                width: 100%;
+                height: 60%;
+            }
+
+            .kolomkomen3 {
+                margin-right: -3%;
+            }
+
+            .kolomkomen4 {
+                margin-right: -3%;
+            }
+
+            .kolomkomen5 {
+                margin-right: -3%;
+            }
+
+            .kolomkomen6 {
+                margin-right: -3%;
+            }
+
+            .kolomkomen7 {
+                margin-right: -3%;
+            }
+
+            .d-flex {
+                margin-right: 50%;
+                margin-top: -5%;
+            }
+
+            .cardo .reviewer-name p {
+                display: block;
+                /* Sesuaikan style lainnya jika diperlukan */
+                margin-bottom: 10px;
+            }
+
+            .cardo .review-content {
+                align-items: center;
+                width: 65%;
+                max-width: 100%;
+                /* Set maksimum lebar konten review card */
+                padding: 2%;
+                /* Padding untuk konten */
+
+            }
+
+            /* Atur ukuran font dan baris baru pada konten review card */
+            .cardo .review-content p {
+                /* Contoh menggunakan viewport width (vw) */
+                word-wrap: break-word;
+                /* Membuat teks pindah baris jika melebihi lebar konten dan memisahkan kata */
+                white-space: normal;
+            }
+
+            .cardo {
+                width: 240px;
+                /* Maksimum lebar review card */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: box-shadow 0.3s ease-in-out;
+                flex: 0 0 27%;
+                margin-right: 6%;
+            }
+
+            /* Increase shadow on hover */
+            .cardo:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
 
             .review-carousel {
-                overflow: hidden;
+                overflow-x: hidden;
+                height: 456px;
                 white-space: nowrap;
-                display: flex;
-                transition: transform 0.3s ease;
-                height: 120%;
-            }
-
-            .review-card {
-                flex: 0 0 80%;
-                margin-right: 6%;
-            }
-
-            .review-card-no-mirror {
-                flex: 0 0 80%;
-                margin-right: 6%;
-            }
-
-            .card-img-top {
-                height: 30%;
-            }
-
-            .review-card .review-content p {
-                margin-bottom: 2%;
-                height: auto;
             }
 
             .carousel-inner {
-                height: 60%;
+                height: 756px;
+            }
+
+            .carousel {
+                height: 456px;
+            }
+
+            .review-card .reviewer-name p {
+                display: block;
+                /* Sesuaikan style lainnya jika diperlukan */
+                margin-bottom: 10px;
+            }
+
+            .review-card .review-content {
+                align-items: center;
+                width: 73%;
+                max-width: 100%;
+                /* Set maksimum lebar konten review card */
+                padding: 2%;
+                /* Padding untuk konten */
+
+            }
+
+            /* Atur ukuran font dan baris baru pada konten review card */
+            .review-card .review-content p {
+                /* Contoh menggunakan viewport width (vw) */
+                word-wrap: break-word;
+                /* Membuat teks pindah baris jika melebihi lebar konten dan memisahkan kata */
+                white-space: normal;
+            }
+
+            .review-card {
+                width: 115%;
+                max-width: 115%;
+                /* Maksimum lebar review card */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: box-shadow 0.3s ease-in-out;
+                flex: 0 0 27%;
+                margin-right: 6%;
+            }
+
+            /* Increase shadow on hover */
+            .review-card:hover {
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            }
+
+            .review-card-no-mirror {
+                width: 80%;
+                margin: 0 auto;
+                margin-bottom: 30px;
+            }
+
+            .custom-btn {
+                margin: 10px;
             }
         }
     </style>
@@ -592,10 +876,10 @@
                                                     </div>
                                                     <br>
                                                     <p> In a laoreet purus. Integer turpis
-                                                    quam, laoreet id orci nec, ultrices
-                                                    lacinia nunc. Aliquam erat
-                                                    volutpat. Curabitur fringilla in
-                                                    purus eget egestas. Etiam quis. </p>
+                                                        quam, laoreet id orci nec, ultrices
+                                                        lacinia nunc. Aliquam erat
+                                                        volutpat. Curabitur fringilla in
+                                                        purus eget egestas. Etiam quis. </p>
                                                     <br>
                                                     <div class="barisnm2 row">
                                                         <div class="colgam2 col-md-2">
@@ -605,7 +889,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="colomnm2 col-md-15">
-                                                            <div class="reviewer-name">
+                                                            <div class="revi reviewer-name">
                                                                 <h4><strong>Nick Cave</strong></h4>
                                                                 <p>CMO ot Nokia</p>
                                                             </div>
@@ -917,21 +1201,12 @@
     <script>
         // jQuery Document Ready
         $(document).ready(function () {
+            // Initialize the carousel
+            const cardCount = $('.review-carousel .card').length;
+            const cardsPerPage = 1; // Ubah menjadi 2 kartu per slide
+            let currentIndex = 0;
+
             function showCards() {
-                const cardCount = $('.review-carousel .card').length;
-                const windowWidth = $(window).width();
-                let cardsPerPage;
-
-                // Tentukan jumlah kartu per slide berdasarkan lebar layar
-                if (windowWidth >= 1440) {
-                    cardsPerPage = 4;
-                } else if (windowWidth >= 568) {
-                    cardsPerPage = 2;
-                } else {
-                    cardsPerPage = 1;
-                }
-
-                let currentIndex = Math.min(currentIndex, cardCount - cardsPerPage);
                 const cardWidth = $('.review-carousel .card').outerWidth(true);
                 const maxIndex = Math.max(cardCount - cardsPerPage, 0);
                 const offset = -currentIndex * cardWidth * cardsPerPage;
@@ -952,20 +1227,8 @@
 
             // Handle Next button click
             $('#nextBtn').on('click', function () {
-                const cardCount = $('.review-carousel .card').length;
-                const windowWidth = $(window).width();
-                let cardsPerPage;
-
-                // Tentukan jumlah kartu per slide berdasarkan lebar layar
-                if (windowWidth >= 1440) {
-                    cardsPerPage = 4;
-                } else if (windowWidth >= 568) {
-                    cardsPerPage = 2;
-                } else {
-                    cardsPerPage = 1;
-                }
-
-                currentIndex = Math.min(currentIndex + 1, cardCount - cardsPerPage);
+                const maxIndex = Math.max(cardCount - cardsPerPage, 0);
+                currentIndex = Math.min(currentIndex + 1, maxIndex);
                 showCards();
             });
 
@@ -976,13 +1239,7 @@
             });
 
             // Show initial cards
-            let currentIndex = 0;
             showCards();
-
-            // Recalculate cards on window resize
-            $(window).resize(function () {
-                showCards();
-            });
         });
     </script>
 
